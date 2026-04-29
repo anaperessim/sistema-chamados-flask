@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2b0a3d, #000);
+    color: white;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-criar {
+    display: block;
+    width: 200px;
+    margin: 0 auto 30px;
+    text-align: center;
+    background: #a020f0;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-criar:hover {
+    background: #c056ff;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background: #1a1a1a;
+    border-left: 5px solid #a020f0;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.card h3 {
+    margin: 0;
+}
+
+.card p {
+    margin: 5px 0 0;
+    color: #ccc;
+}
+.card:hover {
+    transform: scale(1.01);
+}
+.btn-excluir {
+    background-color: #e74c3c;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.btn-excluir:hover {
+    background-color: #c0392b;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form input,
+.form textarea,
+.form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+.form button {
+    background: #a020f0;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background: #c056ff;
+}
+
+.btn-status {
+    background-color: #a020f0;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn-status:hover {
+    background-color: #c056ff;
+}
+
+/* CORES DO STATUS */
+.status {
+    font-weight: bold;
+}
+
+.status.aberto {
+    color: #f1c40f;
+}
+
+.status.em_andamento {
+    color: #3498db;
+}
+
+.status.fechado {
+    color: #2ecc71;
+}

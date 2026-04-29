@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Chamados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Sistema de Chamados</h1>
+
+<a href="/criar" class="btn-criar">+ Novo Chamado</a>
+
+<div class="lista">
+{% for c in chamados %}
+    <div class="card">
+        <div>
+            <h3>{{ c.titulo }}</h3>
+            <p>Setor: {{ c.setor }}</p>
+
+            <p class="status {{ c.status|lower }}">
+                {% if c.status == "aberto" %}
+                    Aberto
+                {% elif c.status == "em_andamento" %}
+                    Em andamento
+                {% else %}
+                    Fechado
+                {% endif %}
+            </p>
+        </div>
+
+        <div>
+            <a href="/status/{{ c.id }}" class="btn-status">
+                Atualizar
+            </a>
+
+            <a href="/excluir/{{ c.id }}" 
+               class="btn-excluir"
+               onclick="return confirm('Tem certeza que deseja excluir?')">
+               Excluir
+            </a>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+</body>
+</html>
