@@ -1,7 +1,9 @@
 import json
+
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
+
 
 def carregar_chamados():
     try:
@@ -10,14 +12,17 @@ def carregar_chamados():
     except:
         return []
 
+
 def salvar_chamados(chamados):
     with open("chamados.json", "w") as f:
         json.dump(chamados, f, indent=4)
+
 
 @app.route("/")
 def home():
     chamados = carregar_chamados()
     return render_template("index.html", chamados=chamados)
+
 
 @app.route("/criar", methods=["GET", "POST"])
 def criar():
@@ -43,26 +48,34 @@ def criar():
 
     return render_template("criar.html")
 
+
 @app.route("/excluir/<int:id>")
 def excluir(id):
     chamados = carregar_chamados()
+
     chamados = [c for c in chamados if c["id"] != id]
+
     salvar_chamados(chamados)
+
     return redirect("/")
+
 
 @app.route("/status/<int:id>")
 def mudar_status(id):
     chamados = carregar_chamados()
 
     for c in chamados:
-        if c["status"] == "aberto":
-            c["status"] = "em_andamento"
-        elif c["status"] == "em_andamento":
-            c["status"] = "fechado"
-        else:
-            c["status"] = "aberto"
+        if c["id"] == id:
+            if c["status"] == "aberto":
+                c["status"] = "em_andamento"
+            elif c["status"] == "em_andamento":
+                c["status"] = "fechado"
+            else:
+                c["status"] = "aberto"
 
     salvar_chamados(chamados)
+
     return redirect("/")
+
 
 app.run(debug=True)
