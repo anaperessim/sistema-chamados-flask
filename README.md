@@ -39,13 +39,75 @@ O projeto também foi desenvolvido com foco em praticar:
 
 ### 🔄 Status dos chamados
 
-Os chamados podem passar pelos seguintes status:
+Os chamados seguem o seguinte fluxo:
+
+**🟡 Aberto → 🔵 Em andamento → 🟢 Fechado → 🟡 Aberto**
+
+---
+
+## 📸 Demonstração
+
+### 🏠 Tela inicial
+
+![Tela inicial](static/imagens/tela-inicial.png)
+
+### ➕ Criação de chamado
+
+![Novo chamado](static/imagens/novo-chamado.png)
+
+### 📋 Chamado cadastrado
+
+![Chamado cadastrado](static/imagens/chamado.png)
+
+### 🔄 Status dos chamados
+
+![Status dos chamados](static/imagens/status.png)
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+### Back-end
+
+- Python
+- Flask
+
+### Front-end
+
+- HTML5
+- CSS3
+
+### Armazenamento
+
+- JSON
+
+### Ferramentas
+
+- Visual Studio Code
+- Git
+- GitHub
+
+---
+
+## 📂 Estrutura do projeto
 
 ```text
-Aberto
-   ↓
-Em andamento
-   ↓
-Fechado
-   ↓
-Aberto
+sistema-chamados-web/
+│
+├── static/
+│   ├── imagens/
+│   │   ├── tela-inicial.png
+│   │   ├── novo-chamado.png
+│   │   ├── chamado.png
+│   │   └── status.png
+│   │
+│   └── style.css
+│
+├── templates/
+│   ├── criar.html
+│   └── index.html
+│
+├── app.py
+├── chamados.json
+├── requirements.txt
+└── README.md
